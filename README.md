@@ -1,16 +1,28 @@
-# React + Vite
+# React Image Gallery
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+> [!NOTE]
+> *Insert your chosen description here. For example: An elegant, dark-themed photography browser powered by React and the Picsum API, featuring smooth asynchronous data fetching and a fully responsive grid layout.*
 
-Currently, two official plugins are available:
+## ✨ Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+* **Dynamic Data Fetching:** Integrates with the [Picsum API](https://picsum.photos/) to fetch high-resolution images asynchronously.
+* **Seamless Pagination:** Custom-built pagination controls (Next/Prev) to navigate through hundreds of photos effortlessly.
+* **Loading States:** Intuitive UI feedback while data is being fetched over the network.
+* **Responsive Design:** A fluid grid layout styled with Tailwind CSS that adapts to different screen sizes.
+* **External Linking:** Clicking on an image card redirects the user to the original high-resolution source.
 
-## React Compiler
+## 🛠️ Tech Stack
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+* **Frontend:** React 
+* **Styling:** Tailwind CSS
+* **HTTP Client:** Axios
 
-## Expanding the ESLint configuration
+## 📂 Project Structure
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+```text
+src/
+├── components/
+│   ├── Buttons.jsx   # Handles pagination logic and UI
+│   └── Cards.jsx     # Renders individual image cards and external links
+├── App.jsx           # Main container, handles state and API calls
+└── main.jsx/index.js # Entry point
