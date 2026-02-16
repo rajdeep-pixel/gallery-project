@@ -1,8 +1,5 @@
 # React Image Gallery
 
-> [!NOTE]
-> *Insert your chosen description here. For example: An elegant, dark-themed photography browser powered by React and the Picsum API, featuring smooth asynchronous data fetching and a fully responsive grid layout.*
-
 ## ✨ Features
 
 * **Dynamic Data Fetching:** Integrates with the [Picsum API](https://picsum.photos/) to fetch high-resolution images asynchronously.
