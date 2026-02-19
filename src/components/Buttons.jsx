@@ -1,29 +1,37 @@
 import React from "react";
+import { ArrowLeft, ArrowRight } from "lucide-react";
 
-const Buttons = (props) => {
+const Buttons = ({ index, setIndex }) => {
+  const totalPages = 100;
+
+  const handlePrev = () => {
+    if (index > 1) setIndex(index - 1);
+  };
+
+  const handleNext = () => {
+    if (index < totalPages) setIndex(index + 1);
+  };
+
   return (
-    <div className="flex justify-center gap-6 items-center p-4">
+    <div className="flex items-center justify-center gap-6">
       <button
-        style={{opacity: props.index == 1 ? "0.5" : "1"}}
-        className="bg-amber-400 text-black text-sm cursor-pointer active:scale-95 rounded px-4 py-2 font-semibold "
-        onClick={() => {
-          if (props.index > 1) {
-            props.setIndex(props.index - 1);
-            props.setUserData([]);
-          }
-        }}
+        onClick={handlePrev}
+        disabled={index === 1}
+        className="w-12 h-12 flex items-center justify-center rounded-full bg-[#222725] text-[#E4E6C3] hover:bg-[#899878] hover:text-[#121113] hover:scale-110 transition-all duration-300 disabled:opacity-40 "
       >
-        Prev
+        <ArrowLeft size={24} strokeWidth={2.5} />
       </button>
-      <h3 className="text-white">Page: {props.index}</h3>
+
+      <div className="px-6 py-2 rounded-full bg-[#222725]/80 text-[#E4E6C3] font-semibold tracking-wide border border-[#899878]/20">
+        Page <span className="text-[#F7F7F2]">{index}</span> of {totalPages}
+      </div>
+
       <button
-        className="bg-amber-400 text-black text-sm cursor-pointer active:scale-95 rounded px-4 py-2 font-semibold "
-        onClick={() => {
-          props.setIndex(props.index + 1);
-          props.setUserData([]);
-        }}
+        onClick={handleNext}
+        disabled={index === totalPages}
+        className="w-12 h-12 flex items-center justify-center rounded-full bg-[#222725] text-[#E4E6C3] hover:bg-[#899878] hover:text-[#121113] hover:scale-110 transition-all duration-300 disabled:opacity-40 "
       >
-        Next
+        <ArrowRight size={24} strokeWidth={2.5} />
       </button>
     </div>
   );
